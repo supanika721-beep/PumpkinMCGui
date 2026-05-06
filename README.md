@@ -1,54 +1,109 @@
-# 🎃 Pumpkin Server GUI
+📱 Minecraft Server on Android (Powered by Pumpkin)
 
-Aplikasi Android untuk mengontrol Pumpkin Minecraft Bedrock Server.
+An experimental Android application that allows you to run a Minecraft server directly on your phone.
 
-## Cara Build (Tanpa PC)
-
-### 1. Upload ke GitHub
-- Buat akun GitHub (gratis)
-- Buat repository baru
-- Upload semua file project ini
-
-### 2. Build Otomatis via GitHub Actions
-- Buka tab **Actions** di repository
-- Klik **Build APK** → **Run workflow**
-- Tunggu ~5 menit
-- Download APK dari **Artifacts**
+This project is based on the open-source Pumpkin Minecraft Server, adapted and packaged into an Android APK with a simple interface for easier control.
 
 ---
 
-## Cara Pakai Setelah Install
+⚠️ Important Credit
 
-### 1. Copy Binary Pumpkin
-```bash
-# Di Termux, copy binary ke folder app:
-cp ~/pumpkin /data/data/com.pumpkin.gui/files/pumpkin
-```
-Atau tekan tombol 📁 di app untuk melihat path yang benar.
+This project would not be possible without:
 
-### 2. Jalankan Server
-- Tekan **▶ Start Server**
-- Log akan muncul di console
-- Pemain yang join/leave otomatis terdeteksi
+👉 Pumpkin Minecraft Server
+https://github.com/pumpkin-mc/pumpkin
 
-### 3. Kirim Command
-- Ketik command di kolom bawah (contoh: `list`, `stop`, `say Halo!`)
-- Tekan **Kirim**
+All core server functionality is developed by the Pumpkin MC contributors.
 
 ---
 
-## Kenapa targetSdk 28?
+🚀 Overview
 
-Sama seperti Termux, app ini menggunakan `targetSdkVersion = 28` agar bisa
-mengeksekusi binary dari direktori internal app (`filesDir`).
-Android 10+ memblokir ini untuk targetSdk >= 29 (W^X restriction).
+This application wraps a precompiled server binary into an Android app, allowing users to:
+
+- Run a Minecraft server locally on Android
+- Start / Stop the server easily
+- Monitor basic system usage
+- Experiment with portable server hosting
 
 ---
 
-## Fitur
-- ✅ Start / Stop server
-- ✅ Console log real-time dengan warna
-- ✅ Kirim command ke server
-- ✅ Deteksi pemain online otomatis
-- ✅ Foreground service (server tetap jalan saat app di-minimize)
-- ✅ Notifikasi status server
+✨ Features
+
+- 📦 ARM64 server binary (from Pumpkin)
+- ▶️ Simple start / stop controls
+- 📊 Basic CPU / memory monitoring
+- 📱 Fully runs on-device
+- 🔧 Lightweight and experimental
+
+---
+
+🛠️ What This Project Adds
+
+Compared to the original Pumpkin project:
+
+- Android APK packaging
+- Mobile-friendly interface (GUI)
+- Process management (start/stop/restart)
+- Basic monitoring tools
+
+---
+
+⚖️ License
+
+This project is licensed under the GNU General Public License v3.0.
+
+Because this project is based on Pumpkin (GPLv3), the entire project is also licensed under GPLv3.
+
+You are free to:
+
+- Use
+- Modify
+- Distribute
+
+As long as you also:
+
+- Provide source code
+- Keep the same license (GPLv3)
+- Give proper credit
+
+---
+
+⚠️ Disclaimer
+
+- This is an experimental project
+- Not intended for production servers
+- Performance depends on your device
+- May cause overheating or battery drain
+
+---
+
+📲 Installation
+
+1. Download the APK from Releases
+2. Enable "Install unknown apps"
+3. Install and open the app
+4. Start the server
+
+---
+
+📌 Source Code Availability
+
+In compliance with the GPLv3 license, the full source code for this project is available in this repository.
+
+If you distribute this APK, you must also provide access to the source code.
+
+---
+
+🤝 Contributing
+
+Contributions are welcome!
+Feel free to fork, modify, and improve the project.
+
+---
+
+⭐ Acknowledgment
+
+Special thanks to the Pumpkin MC developers for creating the core server software.
+
+---

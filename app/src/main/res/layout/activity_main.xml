@@ -43,7 +43,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- Start/Stop + Path button -->
+        <!-- Baris tombol -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,17 +54,38 @@
                 android:id="@+id/btnStartStop"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_weight="1"
-                android:text="▶ Start Server"
+                android:layout_weight="2"
+                android:text="▶ Start"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#238636"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnRestart"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="↺ Restart"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#9E6A03"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnCopyLog"
+                android:layout_width="44dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:text="📋"
+                android:textSize="16sp"
+                android:backgroundTint="#21262D"
+                android:padding="0dp" />
 
             <Button
                 android:id="@+id/btnShowPath"
                 android:layout_width="44dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="6dp"
                 android:text="📁"
                 android:textSize="16sp"
                 android:backgroundTint="#21262D"
@@ -72,9 +93,9 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Players panel -->
+    <!-- Stats: CPU & RAM -->
     <LinearLayout
-        android:id="@+id/playersPanel"
+        android:id="@+id/statsPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -88,11 +109,85 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:id="@+id/tvCpu"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="CPU: 0.0%"
+                android:textColor="#8BE9FD"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <ProgressBar
+                android:id="@+id/progressCpu"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#8BE9FD"
+                android:progressBackgroundTint="#21262D" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvRam"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="RAM: 0MB"
+                android:textColor="#FFB86C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <ProgressBar
+                android:id="@+id/progressRam"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#FFB86C"
+                android:progressBackgroundTint="#21262D" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Players -->
+    <LinearLayout
+        android:id="@+id/playersPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#161B22"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/statsPanel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
         <TextView
             android:id="@+id/tvPlayerCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pemain Online: 0"
+            android:text="Players Online: 0"
             android:textColor="#8B949E"
             android:textSize="12sp"
             android:textStyle="bold" />
@@ -101,16 +196,15 @@
             android:id="@+id/rvPlayers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxHeight="80dp"
             android:nestedScrollingEnabled="false" />
     </LinearLayout>
 
-    <!-- Console Log -->
+    <!-- Console label -->
     <TextView
-        android:id="@+id/tvConsoleLabel"
+        android:id="@+id/tvLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" CONSOLE"
+        android:text="  CONSOLE"
         android:textColor="#8B949E"
         android:textSize="11sp"
         android:textStyle="bold"
@@ -122,18 +216,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Log -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLog"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#0D1117"
         android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tvConsoleLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvLabel"
         app:layout_constraintBottom_toTopOf="@id/commandBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Command Input -->
+    <!-- Command bar -->
     <LinearLayout
         android:id="@+id/commandBar"
         android:layout_width="match_parent"
@@ -150,12 +245,11 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:hint="Ketik command..."
-            android:hintTextColor="#484F58"
+            android:hint="Type command..."
             android:textColor="#F0F6FC"
             android:textSize="13sp"
             android:typeface="monospace"
-            android:background="@drawable/bg_input"
+            android:background="#21262D"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:imeOptions="actionSend"
@@ -167,7 +261,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
-            android:text="Kirim"
+            android:text="Send"
             android:textColor="#FFFFFF"
             android:backgroundTint="#1F6FEB"
             android:textSize="13sp" />
