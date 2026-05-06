@@ -1,0 +1,2 @@
+rootProject.name = "PumpkinGUI"
+include ':app'

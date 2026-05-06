@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PumpkinGUI" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#238636</item>
+        <item name="colorPrimaryVariant">#196127</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSurface">#161B22</item>
+        <item name="android:windowBackground">#0D1117</item>
+        <item name="android:statusBarColor">#161B22</item>
+        <item name="android:navigationBarColor">#161B22</item>
+    </style>
+</resources>
