@@ -98,9 +98,8 @@ Download the latest `pumpkin` binary from the Releases page:
 3. Place the binary into:
  
 
- `app/src/main/assets/pumpkin ` 
-(or if your app uses internal storage at runtime:)
- `/data/data/<your.package.name>/files/pumpkin `  
+ `app/src/main/res/raw` 
+  (There's a file name Place-pumpkin..-here)
 ## 🚀 Build & Run
  
 ### Build APK:
