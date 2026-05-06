@@ -78,6 +78,56 @@ As long as you also:
 
 ---
 
+## 📦 Setup Requirements
+ 
+Before building this project, you need to download the required server binary.
+ 
+### 🔗 Pumpkin Server Binary
+ 
+Download the latest `pumpkin` binary from the Releases page:
+ 
+👉 [https://github.com/pumpkin-mc/pumpkin/releases](https://github.com/pumpkin-mc/pumpkin/releases)
+  
+## 📁 Installation Steps
+ 
+ 
+1. Download the latest APK source and open in Android Studio
+ 
+2. Download the **Pumpkin binary** from Releases
+ 
+3. Place the binary into:
+ 
+
+ `app/src/main/assets/pumpkin ` 
+(or if your app uses internal storage at runtime:)
+ `/data/data/<your.package.name>/files/pumpkin `  
+## 🚀 Build & Run
+ 
+### Build APK:
+ `./gradlew assembleDebug ` 
+### Run App:
+ 
+ 
+- Install APK on device
+ 
+- Open app
+ 
+- The app will automatically extract / load the Pumpkin binary
+ 
+- Press **Start Server**
+ 
+
+  
+## ⚠️ Notes
+ 
+ 
+- Make sure the Pumpkin binary is executable
+ 
+- On first run, app may need storage permission
+ 
+- Only ARM64 (aarch64) binaries are supported
+
+---
 📲 Installation
 
 1. Download the APK from Releases
