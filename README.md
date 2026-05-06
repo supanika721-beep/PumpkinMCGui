@@ -86,7 +86,7 @@ Before building this project, you need to download the required server binary.
  
 Download the latest `pumpkin` binary from the Releases page:
  
-👉 [https://github.com/pumpkin-mc/pumpkin/releases](https://github.com/pumpkin-mc/pumpkin/releases)
+👉 [https://github.com/supanika721-beep/PumpkinMCGui/releases](https://github.com/supanika721-beep/PumpkinMCGui/releases)
   
 ## 📁 Installation Steps
  
